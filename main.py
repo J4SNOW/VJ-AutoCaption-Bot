@@ -20,7 +20,7 @@ start_message = """
 <b>👋Hello {}</b>
 <b>I am an AutoCaption bot</b>
 <b>All you have to do is add me to your channel and I will show you my power</b>
-<b>@Mastmasala</b>"""
+<b>@Autocaption04_bot</b>"""
 
 about_message = """
 <b>• Name : <a href=https://t.me/+WZvF5oPnLD8wZWE1>Vj AutoCaption</a></b>
@@ -41,7 +41,7 @@ def strat_callback(bot, update):
 @AutoCaptionBotV1.on_callback_query(pyrogram.filters.regex("about"))
 def about_callback(bot, update): 
   bot = bot.get_me()
-  update.message.edit(about_message.format(version=pyrogram.__version__, username=bot.mention), reply_markup=about_buttons(bot, update.message), parse_mode=pyrogram.enums.ParseMode.HTML, disable_web_page_preview=True)
+  update.message.edit(about_message.format(version=pyrogram.__version__, username=bot), reply_markup=about_buttons(bot, update.message), parse_mode=pyrogram.enums.ParseMode.HTML, disable_web_page_preview=True)
 
 @AutoCaptionBotV1.on_message(pyrogram.filters.channel)
 def edit_caption(bot, update: pyrogram.types.Message):
@@ -80,7 +80,7 @@ def start_buttons(bot, update):
    pyrogram.types.InlineKeyboardButton("Updates", url="https://t.me/+WZvF5oPnLD8wZWE1"),
    pyrogram.types.InlineKeyboardButton("About 🤠", callback_data="about")
    ],[
-   pyrogram.types.InlineKeyboardButton("➕️ Add To Your Channel ➕️", url=f"http://t.me/{@Autocaption04_bot}?startchannel=true")
+   pyrogram.types.InlineKeyboardButton("➕️ Add To Your Channel ➕️", url=f"http://t.me/{Autocaption04_bot}?startchannel=true")
    ]]
   return pyrogram.types.InlineKeyboardMarkup(buttons)
 
